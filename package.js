@@ -31,12 +31,6 @@ Package.onUse(function(api) {
 
 });
 
-Package.onTest(function(api) {
-  api.use('tinytest');
-  api.use('snowping:adfs-oauth');
-  api.addFiles('adfs-oauth-tests.js');
-});
-
 //NPM module dependencies
 Npm.depends({
    'jwt-simple': '0.3.1'
