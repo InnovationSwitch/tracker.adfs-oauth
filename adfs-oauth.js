@@ -1,7 +1,7 @@
-Accounts.oauth.registerService('tracker-adfsoauth');
+Accounts.oauth.registerService('trackeradfsoauth');
 
 if (Meteor.isClient) {
-  Meteor.loginWithTrackerAdfsoauth = function(options, callback) {
+  Meteor.loginWithTrackeradfsoauth = function(options, callback) {
     // support a callback without options
     if (! callback && typeof options === "function") {
       callback = options;
@@ -9,6 +9,6 @@ if (Meteor.isClient) {
     }
 
     var credentialRequestCompleteCallback = Accounts.oauth.credentialRequestCompleteHandler(callback);
-    TrackerAdfsoauth.requestCredential(options, credentialRequestCompleteCallback);
+    Adfsoauth.requestCredential(options, credentialRequestCompleteCallback);
   };
 }

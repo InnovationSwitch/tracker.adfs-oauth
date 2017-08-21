@@ -1,6 +1,6 @@
-TrackerAdfsoauth = {};
+Adfsoauth = {};
 
-OAuth.registerService('tracker-adfsoauth', 2, null, function (query) {
+OAuth.registerService('trackeradfsoauth', 2, null, function (query) {
 
     var config = Companies.findOne({slug: 'tracker'});
 
@@ -96,6 +96,6 @@ var getIdentity = function (accessToken) {
     }
 };
 
-TrackerAdfsoauth.retrieveCredential = function (credentialToken, credentialSecret) {
+Adfsoauth.retrieveCredential = function (credentialToken, credentialSecret) {
     return OAuth.retrieveCredential(credentialToken, credentialSecret);
 };
