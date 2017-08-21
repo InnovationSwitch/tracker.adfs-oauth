@@ -1,11 +1,11 @@
-Adfsoauth = {};
+TrackerAdfsoauth = {};
 
 // Request credentials for the user
 // @param options {optional}
 // @param credentialRequestCompleteCallback {Function} Callback function to call on
 //   completion. Takes one argument, credentialToken on success, or Error on
 //   error.
-Adfsoauth.requestCredential = function (options, credentialRequestCompleteCallback) {
+TrackerAdfsoauth.requestCredential = function (options, credentialRequestCompleteCallback) {
   // support both (options, callback) and (callback).
   if (!credentialRequestCompleteCallback && typeof options === 'function') {
     credentialRequestCompleteCallback = options;
@@ -35,7 +35,7 @@ Adfsoauth.requestCredential = function (options, credentialRequestCompleteCallba
     // validate options keys
   _.each(_.keys(loginUrlParameters), function (key) {
     if (_.contains(ILLEGAL_PARAMETERS, key))
-      throw new Error("Adfsoauth.requestCredential: Invalid loginUrlParameter: " + key);
+      throw new Error("TrackerAdfsoauth.requestCredential: Invalid loginUrlParameter: " + key);
   });
 
   // backwards compatible options
@@ -48,7 +48,7 @@ Adfsoauth.requestCredential = function (options, credentialRequestCompleteCallba
     loginUrlParameters.prompt = 'consent'
   }
 
-  var loginStyle = OAuth._loginStyle('adfsoauth', config, options);
+  var loginStyle = OAuth._loginStyle('libertyadfsoauth', config, options);
   _.extend(loginUrlParameters, {
     "response_type": "code",
     "client_id":  config.clientId,
@@ -62,7 +62,7 @@ Adfsoauth.requestCredential = function (options, credentialRequestCompleteCallba
     }).join("&");
 
   OAuth.launchLogin({
-    loginService: "adfsoauth",
+    loginService: "trackeradfsoauth",
     loginStyle: loginStyle,
     loginUrl: loginUrl,
     credentialRequestCompleteCallback: credentialRequestCompleteCallback,
