@@ -2,6 +2,9 @@ Accounts.oauth.registerService('trackeradfsoauth');
 
 if (Meteor.isClient) {
   Meteor.loginWithTrackeradfsoauth = function(options, callback) {
+
+    console.log('RUNNING THIS: loginWithTrackeradfsoauth');
+
     // support a callback without options
     if (! callback && typeof options === "function") {
       callback = options;

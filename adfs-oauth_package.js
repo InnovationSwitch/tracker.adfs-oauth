@@ -5,6 +5,7 @@ var fs = Npm.require('fs');
 var projectPath = process.cwd();
 
 verifyToken = function (sToken, sPublicCertPath, sSignature) {
+    console.log('RUNNING THIS: ' + verifyToken);
     var publicCert = fs.readFileSync(projectPath + sPublicCertPath, 'utf8');
     var tokenDecoded = jwt.decode(sToken, publicCert, 'RS256');
     return tokenDecoded;

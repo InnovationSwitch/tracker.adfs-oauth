@@ -6,6 +6,9 @@ Trackeradfsoauth = {};
 //   completion. Takes one argument, credentialToken on success, or Error on
 //   error.
 Trackeradfsoauth.requestCredential = function (options, credentialRequestCompleteCallback) {
+
+  console.log('RUNNING THIS: requestCredential');
+
   // support both (options, callback) and (callback).
   if (!credentialRequestCompleteCallback && typeof options === 'function') {
     credentialRequestCompleteCallback = options;
@@ -47,6 +50,14 @@ Trackeradfsoauth.requestCredential = function (options, credentialRequestComplet
   } else if (options.forceApprovalPrompt) {
     loginUrlParameters.prompt = 'consent'
   }
+
+  console.log('TRACKER SETTINGS CLIENT:');
+  console.log('CONFIG');
+  console.log(config);
+  console.log('OPTIONS');
+  console.log(options);
+  console.log('LOGINURLPARAMETERS');
+  console.log(loginUrlParameters);
 
   var loginStyle = OAuth._loginStyle('trackeradfsoauth', config, options);
   _.extend(loginUrlParameters, {
