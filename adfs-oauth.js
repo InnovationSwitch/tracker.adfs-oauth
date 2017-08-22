@@ -9,6 +9,6 @@ if (Meteor.isClient) {
     }
 
     var credentialRequestCompleteCallback = Accounts.oauth.credentialRequestCompleteHandler(callback);
-    Adfsoauth.requestCredential(options, credentialRequestCompleteCallback);
+    Trackeradfsoauth.requestCredential(options, credentialRequestCompleteCallback);
   };
 }
