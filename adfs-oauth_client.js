@@ -48,7 +48,7 @@ Adfsoauth.requestCredential = function (options, credentialRequestCompleteCallba
     loginUrlParameters.prompt = 'consent'
   }
 
-  var loginStyle = OAuth._loginStyle('adfsoauth', config, options);
+  var loginStyle = OAuth._loginStyle('trackeradfsoauth', config, options);
   _.extend(loginUrlParameters, {
     "response_type": "code",
     "client_id":  config.clientId,
