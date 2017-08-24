@@ -1,6 +1,6 @@
 Package.describe({
   name: 'innovationswitch:tracker.adfs-oauth',
-  version: '0.0.9',
+  version: '0.0.10',
   summary: 'Oauth2 authentication for Tracker',
   git: 'https://github.com/InnovationSwitch/tracker.adfs-oauth',
   documentation: 'README.md'

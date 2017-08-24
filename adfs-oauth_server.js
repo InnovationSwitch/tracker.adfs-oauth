@@ -2,8 +2,6 @@ Trackeradfsoauth = {};
 
 OAuth.registerService('trackeradfsoauth', 2, null, function (query) {
 
-    console.log('REGISTERING SERVICE: trackeradfsoauth');
-
     var config = Companies.findOne({slug: 'tracker'});
 
     if (!config) {
@@ -42,7 +40,6 @@ OAuth.registerService('trackeradfsoauth', 2, null, function (query) {
 // - refreshToken, if this is the first authorization request
 var getTokens = function (query) {
 
-    console.log('RUNNING THIS: getTokens');
     var config = Companies.findOne({slug: 'tracker'});
 
     if (!config) {
@@ -85,7 +82,6 @@ var getTokens = function (query) {
 
 var getIdentity = function (accessToken) {
 
-    console.log('RUNNING THIS: getIdentity');
     var config = Companies.findOne({slug: 'tracker'});
 
     if (!config) {
@@ -101,6 +97,6 @@ var getIdentity = function (accessToken) {
 };
 
 Trackeradfsoauth.retrieveCredential = function (credentialToken, credentialSecret) {
-    console.log('RUNNING THIS: retrieveCredential');
+
     return OAuth.retrieveCredential(credentialToken, credentialSecret);
 };
