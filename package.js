@@ -1,6 +1,6 @@
 Package.describe({
   name: 'innovationswitch:tracker.adfs-oauth',
-  version: '0.0.10',
+  version: '0.0.20',
   summary: 'Oauth2 authentication for Tracker',
   git: 'https://github.com/InnovationSwitch/tracker.adfs-oauth',
   documentation: 'README.md'
@@ -28,6 +28,7 @@ Package.onUse(function(api) {
   api.addFiles('adfs-oauth_server.js', 'server');
   api.addFiles('adfs-oauth_client.js', 'client');
   api.addFiles('adfs-oauth.js');
+  api.addFiles('oauth_browser.js');
 
 });
 
